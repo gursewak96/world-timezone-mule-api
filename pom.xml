@@ -14,7 +14,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<cloudhub.application.name>worldtimezone-api</cloudhub.application.name>
+		<cloudhub.application.name>worldtimezone-app</cloudhub.application.name>
 		<app.runtime>4.4.0</app.runtime>
 		<mule.maven.plugin.version>3.5.4</mule.maven.plugin.version>
 	</properties>
