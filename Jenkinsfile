@@ -6,6 +6,13 @@ pipeline {
         bat 'mvn clean install'
       }
     }
+    
+    stage('Mule Test') {
+      steps {
+        bat 'mvn test'
+      }
+    }
+    
     stage('Deploy') {
       steps {
         bat 'mvn clean package deploy -DmuleDeploy'
