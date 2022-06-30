@@ -7,16 +7,35 @@
 	"item": [
 		{
 			"name": "Get timezone",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\",function(){\r",
+							"    pm.response.to.have.status(200)\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Response time is less than 900ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(900);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8081/timezone/Asia/Kolkata",
+					"raw": "http://worldtimezone-api.us-e2.cloudhub.io/timezone/Asia/Kolkata",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"worldtimezone-api",
+						"us-e2",
+						"cloudhub",
+						"io"
 					],
-					"port": "8081",
 					"path": [
 						"timezone",
 						"Asia",
