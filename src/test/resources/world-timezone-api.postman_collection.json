@@ -1,0 +1,30 @@
+{
+	"info": {
+		"_postman_id": "d5e5f69c-dcdc-4a49-a9b3-edaee5b0dfa9",
+		"name": "world-timezone-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get timezone",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/timezone/Asia/Kolkata",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"timezone",
+						"Asia",
+						"Kolkata"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
