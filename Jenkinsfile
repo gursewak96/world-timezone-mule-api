@@ -13,7 +13,7 @@ pipeline {
     }
     stage('Postman test') {
       steps {
-        bat 'newman run .\src\test\resources\world-timezone-api.postman_collection.json --disable-unicode'
+        bat 'newman run .\\src\\test\\resources\\world-timezone-api.postman_collection.json --disable-unicode'
       }
     }
   }
