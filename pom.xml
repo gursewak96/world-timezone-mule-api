@@ -31,6 +31,15 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
+				<configuration>
+					<cloudHubDeployment>
+						<username>HarryStark123</username>
+						<password>Pass@123</password>
+						<environment>Sandbox</environment>
+						<workers>1</workers>
+      					<workerType>Micro</workerType>
+					</cloudHubDeployment>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
