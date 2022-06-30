@@ -13,7 +13,7 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	<configuration-properties doc:name="Configuration properties" doc:id="2f34a420-a981-4ce4-b9be-be64db47e967" file="worldtimezone.properties" />
 	<flow name="worldtimezone-apiFlow" doc:id="5c2cd5bd-4634-4c2e-a36e-70582cb82c69" >
 		<http:listener doc:name="Listener" doc:id="73480b37-9b11-4f57-b3cc-689623635f0b" config-ref="HTTP_Listener_config" path="/{region}/{city}"/>
-		<http:request method="GET" doc:name="Request" doc:id="8db79de9-f18d-4f48-9391-40443c37a39b" config-ref="HTTP_Request_configuration" path="/{region}/{city}">
+		<http:request method="GET" doc:name="Request to worldtime api" doc:id="8db79de9-f18d-4f48-9391-40443c37a39b" config-ref="HTTP_Request_configuration" path="/{region}/{city}">
 			<http:uri-params ><![CDATA[#[output application/java
 ---
 {
