@@ -39,7 +39,7 @@ pipeline {
 			//set the fileName, appName, orgName and envName dynamically. Currently they are hardcoded.
             def response = httpRequest acceptType: 'APPLICATION_JSON', contentType: 'APPLICATION_JSON',
                            httpMode: 'POST', requestBody: "${certDetails}",
-                           url: "https://api.github.com/orgs/${orgName}"
+                           url: "$url"
             echo "certification details sent"
             echo response
 			
