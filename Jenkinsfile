@@ -41,7 +41,7 @@ pipeline {
                            httpMode: 'POST', requestBody: "${certDetails}",
                            url: "$url"
             echo "certification details sent"
-            echo response
+            echo "${response.status}"
 			
 	
    			}
