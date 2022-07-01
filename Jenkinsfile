@@ -19,7 +19,8 @@ pipeline {
 		script {
 			
 			//set the URL of mulesoft application which will parse the keytool output. Change it according to your application, the below might not be operational
-			final String url = "http://hello-world-10072021.us-e2.cloudhub.io/api/certficate"
+			//final String url = "http://hello-world-10072021.us-e2.cloudhub.io/api/certficate"
+			final String url = "http://localhost:8081/callback"
 			
 			//find jks files in the workspace
 			def files = findFiles(glob: '**/*.jks')
@@ -35,8 +36,8 @@ pipeline {
 			echo "output : ${certDetails}"
 			
 			//set the fileName, appName, orgName and envName dynamically. Currently they are hardcoded.
-            //def response = sh(script: "curl --location --request POST $url --header 'Content-Type: application/java' --header 'fileName: test1.jks' --header 'appName: customer-prc-api'  --header 'envName: Sandbox' --header 'orgName: Personal' --data-raw '${certDetails}'", returnStdout: true)
-            //echo response
+            def response = sh(script: "curl --location --request POST $url --header 'Content-Type: application/java' --header 'fileName: test1.jks' --header 'appName: customer-prc-api'  --header 'envName: Sandbox' --header 'orgName: Personal' --data-raw '${certDetails}'", returnStdout: true)
+            echo response
 			
 	
    			}
