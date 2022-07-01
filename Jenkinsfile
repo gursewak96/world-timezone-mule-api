@@ -38,6 +38,7 @@ pipeline {
 			
 			//set the fileName, appName, orgName and envName dynamically. Currently they are hardcoded.
             def response = httpRequest acceptType: 'APPLICATION_JSON', contentType: 'APPLICATION_JSON',
+            				customHeaders: [[maskValue: true, name: 'foo', value: 'bar']],
                            httpMode: 'POST', requestBody: "${certDetails}",
                            url: "$url"
             echo "certification details sent"
