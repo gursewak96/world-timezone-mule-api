@@ -20,7 +20,7 @@ pipeline {
 			
 			//set the URL of mulesoft application which will parse the keytool output. Change it according to your application, the below might not be operational
 			//final String url = "http://hello-world-10072021.us-e2.cloudhub.io/api/certficate"
-			final String url = "http://localhost:8081/callback"
+			final String url = "http://localhost:8081/api/certficate"
 			
 			//find jks files in the workspace
 			def files = findFiles(glob: '**/*.jks')
