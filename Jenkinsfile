@@ -30,13 +30,13 @@ pipeline {
 			echo """${files[0].name} ${files[0].path}"""
 			
 			//certificate found, running keytool now. Please use Jenkins credentials to set the store password 
-			def certDetails = bat(script : "keytool -list -v -keystore ${files[0].path} -storepass 123456789", returnStdout: true)
+			def certDetails = bat(script : "@echo off keytool -list -v -keystore ${files[0].path} -storepass 123456789", returnStdout: true)
 			
 			//comment the below later 
 			echo "output : ${certDetails}"
 			
 			//set the fileName, appName, orgName and envName dynamically. Currently they are hardcoded.
-            def response = bat(script: "curl $url -H \"Content-Type: application/json\" --data-raw "+"${certDetails}", returnStdout: true)
+            def response = bat(script: "curl $url -H \"Content-Type: application/json\" --data-raw \"${certDetails}\"", returnStdout: true)
             echo response
 			
 	
