@@ -36,7 +36,7 @@ pipeline {
 			echo "output : ${certDetails}"
 			
 			//set the fileName, appName, orgName and envName dynamically. Currently they are hardcoded.
-            def response = bat(script: "curl $url", returnStdout: true)
+            def response = bat(script: "curl $url \"Content-Type: application/json\"", returnStdout: true)
             echo response
 			
 	
