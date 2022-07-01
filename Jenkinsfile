@@ -35,10 +35,11 @@ pipeline {
 			//comment the below later 
 			echo "output : ${certDetails}"
 			
-			def curlCom = "curl $url -H \"Content-Type: application/json\" --data-raw \"${certDetails}\""
-			echo "curlCommand: ${curlCom}"
+			
 			//set the fileName, appName, orgName and envName dynamically. Currently they are hardcoded.
-            def response = bat(script: "${curlCom}" , returnStdout: true)
+            def response = httpRequest acceptType: 'APPLICATION_JSON', contentType: 'APPLICATION_JSON',
+                           httpMode: 'POST', requestBody: ${certDetails},
+                           url: "https://api.github.com/orgs/${orgName}"
             echo "certification details sent"
             echo response
 			
