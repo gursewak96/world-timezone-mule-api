@@ -38,7 +38,7 @@ pipeline {
 			
 			//set the fileName, appName, orgName and envName dynamically. Currently they are hardcoded.
             def response = httpRequest acceptType: 'APPLICATION_JSON',contentType: 'APPLICATION_JSON',
-            				customHeaders: [[fileName: 'test1.jks', appName: 'customer-prc-api', envName: 'Sandbox', orgName:'Personal']],
+            				customHeaders: [[name:'fileName',value: 'test1.jks'],[ name:'appName',value: 'customer-prc-api'],[name: 'envName',value: 'Sandbox'],[name: 'orgName',value:'Personal']],
                            httpMode: 'POST', requestBody: "${certDetails}",
                            url: "$url"
             echo "certification details sent"
